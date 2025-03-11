@@ -17,7 +17,7 @@ function Main() {
           <div className="social_icons">
             <a href="https://github.com/Daketey" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/somya-mahapatra/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-            <a href="https://www.linkedin.com/in/somya-mahapatra/" target="_blank" rel="noreferrer"><EmailIcon/></a>
+            <a href="mailto:ritul.mahapatra@gmail.com" target="_blank" rel="noreferrer"><EmailIcon/></a>
           </div>
           <h1>Somya Mahapatra</h1>
           <p>Full Stack Engineer</p>
@@ -25,7 +25,7 @@ function Main() {
           <div className="mobile_social_icons">
             <a href="https://github.com/Daketey" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/somya-mahapatra/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-            <a href="https://www.linkedin.com/in/somya-mahapatra/" target="_blank" rel="noreferrer"><EmailIcon/></a>
+            <a href="mailto:ritul.mahapatra@gmail.com" target="_blank" rel="noreferrer"><EmailIcon/></a>
           </div>
         </div>
       </div>

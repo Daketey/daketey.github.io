@@ -5,8 +5,79 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import { outlinedInputClasses } from '@mui/material/OutlinedInput';
+import { createTheme, ThemeProvider, Theme, useTheme } from '@mui/material/styles';
 
-function Contact() {
+
+const customTheme = (outerTheme: Theme, disableDark) =>
+  createTheme(disableDark?{
+    palette: {
+      mode: 'dark',
+    },
+    components: {
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            '--TextField-brandBorderColor': '#E0E3E7',
+            '--TextField-brandBorderHoverColor': '#B2BAC2',
+            '--TextField-brandBorderFocusedColor': '#6F7E8C',
+            '& label.Mui-focused': {
+              color: 'var(--TextField-brandBorderFocusedColor)',
+            },
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          notchedOutline: {
+            borderColor: 'var(--TextField-brandBorderColor)',
+          },
+          root: {
+            [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
+              borderColor: 'var(--TextField-brandBorderHoverColor)',
+            },
+            [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
+              borderColor: 'var(--TextField-brandBorderFocusedColor)',
+            },
+          },
+        },
+      },
+      MuiFilledInput: {
+        styleOverrides: {
+          root: {
+            '&::before, &::after': {
+              borderBottom: '2px solid var(--TextField-brandBorderColor)',
+            },
+            '&:hover:not(.Mui-disabled, .Mui-error):before': {
+              borderBottom: '2px solid var(--TextField-brandBorderHoverColor)',
+            },
+            '&.Mui-focused:after': {
+              borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)',
+            },
+          },
+        },
+      },
+      MuiInput: {
+        styleOverrides: {
+          root: {
+            '&::before': {
+              borderBottom: '2px solid var(--TextField-brandBorderColor)',
+            },
+            '&:hover:not(.Mui-disabled, .Mui-error):before': {
+              borderBottom: '2px solid var(--TextField-brandBorderHoverColor)',
+            },
+            '&.Mui-focused:after': {
+              borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)',
+            },
+          },
+        },
+      },
+    },
+  }:{});
+
+
+
+function Contact(props) {
 
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -48,68 +119,80 @@ function Contact() {
     //   setMessage('');
     // }
   };
-
+  const outerTheme = useTheme();
   return (
-    <div id="contact">
-      <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-          <Box
-            ref={form}
-            component="form"
-            noValidate
-            autoComplete="off"
-            className='contact-form'
-          >
-            <div className='form-flex'>
+    <ThemeProvider theme={customTheme(outerTheme, props.mode == 'dark')}>
+      <div id="contact">
+        <div className="items-container">
+          <div className="contact_wrapper">
+            <h1>Contact Me</h1>
+            <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
+            <Box
+              ref={form}
+              component="form"
+              noValidate
+              autoComplete="off"
+              className='contact-form'
+            >
+              <div className='form-flex'>
+                <TextField
+                  required
+                  InputLabelProps={{
+                    style: { color: props.mode == 'dark'? '#fff' : 'black' },
+                  }}
+                  sx={{ input: { color: props.mode == 'dark'? '#fff' : 'black' } }}
+                  id="outlined-required"
+                  label="Your Name"
+                  placeholder="What's your name?"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  error={nameError}
+                  helperText={nameError ? "Please enter your name" : ""}
+                />
+                <TextField
+                  required
+                  InputLabelProps={{
+                    style: { color: props.mode == 'dark'? '#fff' : 'black' },
+                  }}
+                  sx={{ input: { color: props.mode == 'dark'? '#fff' : 'black' } }}
+                  id="outlined-required"
+                  label="Email / Phone"
+                  placeholder="How can I reach you?"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  error={emailError}
+                  helperText={emailError ? "Please enter your email or phone number" : ""}
+                />
+              </div>
               <TextField
                 required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
+                InputLabelProps={{
+                  style: { color: props.mode == 'dark'? '#fff' : 'black' },
                 }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={email}
+                sx={{ input: { color: props.mode == 'dark'? '#fff' : 'black' } }}
+                id="outlined-multiline-static"
+                label="Message"
+                placeholder="Send me any inquiries or questions"
+                multiline
+                rows={10}
+                className="body-form"
+                value={message}
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setMessage(e.target.value);
                 }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
+                error={messageError}
+                helperText={messageError ? "Please enter the message" : ""}
               />
-            </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
-            </Button>
-          </Box>
+              <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
+                Send
+              </Button>
+            </Box>
+          </div>
         </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
