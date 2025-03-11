@@ -14,6 +14,7 @@ const labelsFirst = [
     "VMware",
     "AWS",
     "Azure",
+    "OCI",
     "Sentinel"
 ];
 
@@ -24,7 +25,8 @@ const labelsSecond = [
     "BASH",
     "Trivy",
     "Blackduck",
-    "Veracode"
+    "Veracode",
+    "Hashicorp Vault"
 ];
 
 const labelsThird = [
