@@ -1,44 +1,9 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import '../assets/styles/Expertise.scss';
+import config from '../config/portfolio.json';
 
-const services = [
-    {
-        id: 'platform-eng',
-        name: 'platform-engineering',
-        pid: '1337',
-        mem: '872KB',
-        time: '2y4m',
-        description: 'I have worked on deployment of Terraform Enterprise, creation of NIST/CIS compliant VM and Container images, policy enforcement for SDDC migration and Oracle DB creation setup automation setup for virtual machines.',
-        modules: [
-            "Terrafrom", "Packer", "Ansible", "Docker", "VMware", 
-            "AWS", "Azure", "OCI", "Sentinel"
-        ]
-    },
-    {
-        id: 'devsecops',
-        name: 'devsecops-pipeline',
-        pid: '2048',
-        mem: '684KB',
-        time: '1y8m',
-        description: 'I worked on creating Devops pipeline from scratch for build and deployment of applications, I also enforced security standards into these pipelines to ensure we are mitigating any known threat or risks.',
-        modules: [
-            "Git", "GitHub Actions", "Harness", "BASH", "Trivy", 
-            "Blackduck", "Veracode", "Hashicorp Vault"
-        ]
-    },
-    {
-        id: 'fullstack',
-        name: 'fullstack-dev',
-        pid: '4096',
-        mem: '928KB',
-        time: '3y1m',
-        description: 'I have worked on several fullstack projects and middleware integrations, this includes setting up microservices, creating middlewares, frontend development and backend api development.',
-        modules: [
-            "React", "Node.js", "Apache Kafka", "Python"
-        ]
-    }
-];
+const services = config.services;
 
 function Expertise() {
     return (

@@ -5,48 +5,18 @@ import EmailIcon from '@mui/icons-material/Email';
 import ArticleIcon from '@mui/icons-material/Article';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import '../assets/styles/Main.scss';
+import config from '../config/portfolio.json';
+import asciiArt from '../assets/ascii-art.txt?raw';
 
 function Main() {
+  const { personal, social } = config;
 
-  const asciiArt = `.:.                                 
-                         .-=+**#######**+-                         
-                     -==+**#%%@@@%%#####**###:                     
-                  .====+*#%%%#*##%%%#%%%#####%%+                   
-                 --=+++*##%%%%%%%@@@@@@@@@@%%%#%%*                 
-               .====+++#%%%%%@@@%%@@@@@@%%%%%%%##%#                
-               ==+==+***#%@@@@@@@@@@@@@@@@@@@@%%##%#.              
-              -+*+**##*#%%@@@@@%*#@@@@@@@@@@@@@@@%#*#              
-             =+=+*+=+***%%%%%%@@@@@@@@@@@%@@@@@@@@@@%#             
-             =+=****+++#@@%%%@@@@@@@@@@@@%%%%%@##%@@@%+            
-             =+*+***##%##@@@@@@@@@@@@@%#*****#+-+#@@@@+            
-            +**+*+**+#@@@@@@@%%%###**+=--::::...:+@@@@*            
-            ##*+#%%#*#*+==--......::::::.......  -%@@@%            
-           .**+*%##*:...                    ... .-%@@@+            
-            +**::::.:.               .:-++++=-. .=@@@@:            
-            -##  .::-+*##+=-.     :=+*%%%#**++=:.:%@@@-            
-             =%    :=::=*#*-.    .:-*%@%%%*++=:..:%@@+             
-              #   :== +@@**#.     .+#%-%@%.=**+=:.#@ .             
-              =       .:=++:      .-*#*++++==+==:.*% -             
-              .        .:           ::--====-::...=*:              
-                                     .:..  ..  .   :=              
-                                    ..:-.         .+               
-                                      .=+-.       ..               
-                     -=     .   ::::--::=**-....  :                
-                    -=       ..:-+*=+=-=++++:..                    
-                     -:.       .:::--:.:-*+-..                     
-                             .--=++===+-++=::.                     
-                               .  .:. ...::-:...                   
-                              :=++=-..... .::::                    
-                                          .:-.                     
-                .+%               .:... .:::.  #                   
-              .=%@@           .:::::---::-:.   @#                  
-              :+@%.        --===++++++=-:      @%=:                
-             .:=@*           :+#***+-:..    .:%@*---+@*            
-         -.  ..-+#:            .:--::......:*@%#=--=*%@@@%.        
-      -==+.  ..:-=*:              .....::-+%@%*====+*@@@%@@@%-     
-  .-===+*+:  ...:--==              ..:::-=++*++==++#*@@@@@@@@@@%-  
--==++**+++#. ....::---=.          .::-----=====+=++=@@@@@@@@@@@@@@#
-+++++**#####......:::---=:       ::--::--=====----+@@@@@@@@@@%%%%%%`;
+  const iconComponents: { [key: string]: any } = {
+    github: GitHubIcon,
+    linkedin: LinkedInIcon,
+    medium: ArticleIcon,
+    email: EmailIcon
+  };
 
   return (
     <div className="container">
@@ -56,43 +26,29 @@ function Main() {
         </div>
         <div className="content">
           <div className="social_icons">
-            <a href="https://github.com/Daketey" target="_blank" rel="noreferrer">
-              <span className="icon-label">github</span>
-              <GitHubIcon/>
-            </a>
-            <a href="https://www.linkedin.com/in/somya-mahapatra/" target="_blank" rel="noreferrer">
-              <span className="icon-label">linkedin</span>
-              <LinkedInIcon/>
-            </a>
-            <a href="https://medium.com/@ritul.mahapatra" target="_blank" rel="noreferrer">
-              <span className="icon-label">medium</span>
-              <ArticleIcon/>
-            </a>
-            <a href="mailto:ritul.mahapatra@gmail.com" target="_blank" rel="noreferrer">
-              <span className="icon-label">email</span>
-              <EmailIcon/>
-            </a>
+            {social.map((item) => {
+              const IconComponent = iconComponents[item.name];
+              return (
+                <a key={item.name} href={item.url} target="_blank" rel="noreferrer">
+                  <span className="icon-label">{item.label}</span>
+                  <IconComponent/>
+                </a>
+              );
+            })}
           </div>
-          <h1 data-text="Somya Mahapatra">Somya Mahapatra</h1>
-          <p>Product Security Engineer</p>
+          <h1 data-text={personal.name}>{personal.name}</h1>
+          <p>{personal.title}</p>
 
           <div className="mobile_social_icons">
-            <a href="https://github.com/Daketey" target="_blank" rel="noreferrer">
-              <span className="icon-label">github</span>
-              <GitHubIcon/>
-            </a>
-            <a href="https://www.linkedin.com/in/somya-mahapatra/" target="_blank" rel="noreferrer">
-              <span className="icon-label">linkedin</span>
-              <LinkedInIcon/>
-            </a>
-            <a href="https://medium.com/@ritul.mahapatra" target="_blank" rel="noreferrer">
-              <span className="icon-label">medium</span>
-              <ArticleIcon/>
-            </a>
-            <a href="mailto:ritul.mahapatra@gmail.com" target="_blank" rel="noreferrer">
-              <span className="icon-label">email</span>
-              <EmailIcon/>
-            </a>
+            {social.map((item) => {
+              const IconComponent = iconComponents[item.name];
+              return (
+                <a key={item.name} href={item.url} target="_blank" rel="noreferrer">
+                  <span className="icon-label">{item.label}</span>
+                  <IconComponent/>
+                </a>
+              );
+            })}
           </div>
         </div>
         <div className="scroll-indicator">

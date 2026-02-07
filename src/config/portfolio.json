@@ -1,0 +1,139 @@
+{
+  "personal": {
+    "name": "Somya Mahapatra",
+    "title": "Product Security Engineer",
+    "email": "ritul.mahapatra@gmail.com"
+  },
+  "social": [
+    {
+      "name": "github",
+      "label": "github",
+      "url": "https://github.com/Daketey"
+    },
+    {
+      "name": "linkedin",
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/somya-mahapatra/"
+    },
+    {
+      "name": "medium",
+      "label": "medium",
+      "url": "https://medium.com/@ritul.mahapatra"
+    },
+    {
+      "name": "email",
+      "label": "email",
+      "url": "mailto:ritul.mahapatra@gmail.com"
+    }
+  ],
+  "jobs": [
+    {
+      "company": "PayPal",
+      "title": "CyberSecurity Engineer",
+      "location": "Bengaluru, Karnataka",
+      "date": "2025 - present",
+      "desc": "Working as a Product Security Engineer.",
+      "id": "PP_2025"
+    },
+    {
+      "company": "State Street",
+      "title": "Platform Engineer (Senior Associate)",
+      "location": "Bengaluru, Karnataka",
+      "date": "2022 - 2025",
+      "desc": "Working as part of the Infrastructure Automation team.",
+      "id": "SS_2022"
+    },
+    {
+      "company": "Maersk",
+      "title": "Software Engineering Intern",
+      "location": "Bengaluru, Karnataka",
+      "date": "2021 - 2022",
+      "desc": "Worked as part of the CRM team as a Salesforce Developer.",
+      "id": "MRS_2021"
+    },
+    {
+      "company": "HighRadius",
+      "title": "Software Engineering Intern",
+      "location": "Bhubaneswar, Odisha",
+      "date": "2021 - 2021",
+      "desc": "Full-stack Development, API Development, User Experience",
+      "id": "HR_2021"
+    }
+  ],
+  "services": [
+    {
+      "id": "platform-eng",
+      "name": "platform-engineering",
+      "pid": "1337",
+      "mem": "872KB",
+      "time": "2y4m",
+      "description": "I have worked on deployment of Terraform Enterprise, creation of NIST/CIS compliant VM and Container images, policy enforcement for SDDC migration and Oracle DB creation setup automation setup for virtual machines.",
+      "modules": [
+        "Terrafrom",
+        "Packer",
+        "Ansible",
+        "Docker",
+        "VMware",
+        "AWS",
+        "Azure",
+        "OCI",
+        "Sentinel"
+      ]
+    },
+    {
+      "id": "devsecops",
+      "name": "devsecops-pipeline",
+      "pid": "2048",
+      "mem": "684KB",
+      "time": "1y8m",
+      "description": "I worked on creating Devops pipeline from scratch for build and deployment of applications, I also enforced security standards into these pipelines to ensure we are mitigating any known threat or risks.",
+      "modules": [
+        "Git",
+        "GitHub Actions",
+        "Harness",
+        "BASH",
+        "Trivy",
+        "Blackduck",
+        "Veracode",
+        "Hashicorp Vault"
+      ]
+    },
+    {
+      "id": "fullstack",
+      "name": "fullstack-dev",
+      "pid": "4096",
+      "mem": "928KB",
+      "time": "3y1m",
+      "description": "I have worked on several fullstack projects and middleware integrations, this includes setting up microservices, creating middlewares, frontend development and backend api development.",
+      "modules": [
+        "React",
+        "Node.js",
+        "Apache Kafka",
+        "Python"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "fileName": "machine_learning_lottery.py",
+      "fileSize": "3.2MB",
+      "title": "Not all Lotteries are made Equal",
+      "description": "This machine learning project aimed to investigate the relation between machine learning model size and ease of finding sparse sub networks through Ticker search algorithm.",
+      "url": ""
+    },
+    {
+      "fileName": "azure_az900_cert.md",
+      "fileSize": "128KB",
+      "title": "AZ-900",
+      "description": "Certified in Azure Fundamentals AZ-900.",
+      "url": ""
+    },
+    {
+      "fileName": "oracle_1Z0_cert.md",
+      "fileSize": "156KB",
+      "title": "1Z0-1085-24",
+      "description": "Oracle Cloud Infrastructure certified Foundations Associate.",
+      "url": ""
+    }
+  ]
+}

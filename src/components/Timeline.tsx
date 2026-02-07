@@ -2,37 +2,13 @@ import React, { useState } from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import config from '../config/portfolio.json';
 
 import '../assets/styles/Timeline.scss';
 
 function Timeline() {
   const [terminalInput, setTerminalInput] = useState('');
-  const jobs = [
-    {
-      company: 'State Street',
-      title: 'Platform Engineer (Senior Associate)',
-      location: 'Bengaluru, Karnataka',
-      date: '2022 - present',
-      desc: 'Working as part of the Infrastructure Automation team.',
-      id: 'SS_2022'
-    },
-    {
-      company: 'Maersk',
-      title: 'Software Engineering Intern',
-      location: 'Bengaluru, Karnataka',
-      date: '2021 - 2022',
-      desc: 'Worked as part of the CRM team as a Salesforce Developer.',
-      id: 'MRS_2021'
-    },
-    {
-      company: 'HighRadius',
-      title: 'Software Engineering Intern',
-      location: 'Bhubaneswar, Odisha',
-      date: '2021 - 2021',
-      desc: 'Full-stack Development, API Development, User Experience',
-      id: 'HR_2021'
-    }
-  ];
+  const jobs = config.jobs;
   
   return (
     <div id="history">
@@ -82,7 +58,7 @@ function Timeline() {
                 <span className="line-label">DESCRIPTION:</span>
                 <span className="line-value">{job.desc}</span>
               </div>
-              <div className="entry-divider">{'─'.repeat(80)}</div>
+              <div className="entry-divider">{'─'.repeat(190)}</div>
             </div>
           ))}
           
