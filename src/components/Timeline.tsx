@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import '../assets/styles/Timeline.scss';
 
 function Timeline() {
+  const [terminalInput, setTerminalInput] = useState('');
   const jobs = [
     {
       company: 'State Street',
@@ -90,7 +91,15 @@ function Timeline() {
             <span className="prompt-separator">:</span>
             <span className="prompt-path">~/career</span>
             <span className="prompt-symbol">$</span>
-            <span className="cursor-blink">_</span>
+            <input 
+              type="text" 
+              className="terminal-input"
+              value={terminalInput}
+              onChange={(e) => setTerminalInput(e.target.value)}
+              placeholder=""
+              spellCheck={false}
+              autoComplete="off"
+            />
           </div>
         </div>
         </div>

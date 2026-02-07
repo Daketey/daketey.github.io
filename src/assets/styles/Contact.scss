@@ -1,8 +1,8 @@
 // Terminal Mail Interface Contact
 .terminal-contact {
   max-width: 1300px;
-  margin: 0 auto;
-  padding: 3rem 2rem 5rem 2rem;
+  margin: 3rem auto 5rem auto;
+  padding: 0 2rem;
   font-family: 'Courier Prime', monospace;
 }
 
@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .header-left {
@@ -103,6 +104,7 @@
   background: rgba(0, 0, 0, 0.95);
   padding: 2rem;
   position: relative;
+  box-sizing: border-box;
 }
 
 .contact-prompt {
@@ -234,7 +236,7 @@
 
 @media (max-width: 900px) {
   .terminal-contact {
-    padding: 2rem 1rem 4rem 1rem;
+    padding: 0 1rem;
   }
   
   .contact-header {
