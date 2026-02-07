@@ -1,38 +1,400 @@
-.vertical-timeline span {
-    color: white;
+
+// Terminal/Console Style Career History
+.terminal-career-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem 5rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.terminal-window {
+  width: 100%;
+//   border: 2px solid #00fff7;
+//   border-radius: 8px;
+//   overflow: hidden;
+//   box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+}
+
+.terminal-header {
+  width: 100%;
+  background: rgba(0, 15, 20, 0.95);
+  border-bottom: 1px solid rgba(0, 255, 247, 0.3);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .header-title {
     font-family: 'Courier Prime', monospace;
+    color: #00fff7;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
 }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
+.header-right {
+  color: #ff00ea;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-family: 'Courier Prime', monospace;
 }
 
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  
+  &.red {
+    background: #ff5f56;
+  }
+  
+  &.yellow {
+    background: #ffbd2e;
+  }
+  
+  &.green {
+    background: #27c93f;
+  }
 }
 
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
+.terminal-title {
+  font-family: 'Courier Prime', monospace;
+  color: #00fff7;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 247, 0.5);
+  letter-spacing: 0.05em;
 }
 
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
+// Glitch effect
+.glitch {
+  position: relative;
+  animation: glitch-main 5s infinite;
+  
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &::before {
+    animation: glitch-before 3s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px, -2px);
+  }
+  
+  &::after {
+    animation: glitch-after 2.5s infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: translate(2px, 2px);
+  }
 }
 
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
+@keyframes glitch-main {
+  0%, 90%, 100% { opacity: 1; }
+  93% { opacity: 0.8; transform: translate(0); }
+  95% { opacity: 0.9; transform: translate(2px, 0); }
+  97% { opacity: 1; transform: translate(-2px, 0); }
 }
 
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
+@keyframes glitch-before {
+  0%, 93%, 100% { opacity: 0; }
+  94% { opacity: 0.5; transform: translate(-3px, -3px); color: #ff00ea; }
+  96% { opacity: 0.7; transform: translate(3px, 3px); color: #ff00ea; }
+  98% { opacity: 0; }
 }
 
-.svg-inline--fa {
-    color: white;
+@keyframes glitch-after {
+  0%, 91%, 100% { opacity: 0; }
+  92% { opacity: 0.6; transform: translate(3px, 3px); color: #00fff7; }
+  95% { opacity: 0.8; transform: translate(-3px, -3px); color: #00fff7; }
+  97% { opacity: 0; }
 }
 
-@media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+.terminal-body {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  font-family: 'Courier Prime', monospace;
+  position: relative;
+  overflow: hidden;
+  
+  // Scanline effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 247, 0.03) 0px,
+      rgba(0, 255, 247, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    animation: scanline-move 8s linear infinite;
+  }
+  
+  // Glitch overlay
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 0, 234, 0.03) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+    animation: glitch-sweep 3s ease-in-out infinite;
+  }
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+@keyframes glitch-sweep {
+  0%, 100% { transform: translateX(-100%); opacity: 0; }
+  50% { transform: translateX(100%); opacity: 1; }
+}
+
+.terminal-prompt {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  .prompt-user {
+    color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+    font-weight: 700;
+  }
+  
+  .prompt-separator {
+    color: #fff;
+  }
+  
+  .prompt-path {
+    color: #5890ff;
+    text-shadow: 0 0 8px rgba(88, 144, 255, 0.6);
+  }
+  
+  .prompt-symbol {
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .prompt-command {
+    color: #ff00ea;
+    text-shadow: 0 0 8px rgba(255, 0, 234, 0.6);
+    margin-left: 0.5rem;
+  }
+  
+  &.terminal-cursor {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.cursor-blink {
+  color: #00fff7;
+  animation: cursor-blink 1s step-end infinite;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 255, 247, 0.8);
+  margin-left: 0.3rem;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-entry {
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: entry-appear 0.6s ease forwards;
+  position: relative;
+  
+  &[data-index="0"] { animation-delay: 0.3s; }
+  &[data-index="1"] { animation-delay: 0.6s; }
+  &[data-index="2"] { animation-delay: 0.9s; }
+  &[data-index="3"] { animation-delay: 1.2s; }
+  
+  &:hover {
+    .entry-header, .entry-line {
+      text-shadow: 0 0 10px currentColor;
     }
+  }
+}
+
+@keyframes entry-appear {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.entry-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.entry-timestamp {
+  color: #ffbd2e;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 189, 46, 0.6);
+  font-size: 1rem;
+}
+
+.entry-status {
+  color: #27c93f;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
+  padding: 0.2rem 0.6rem;
+  background: rgba(39, 201, 63, 0.1);
+  border: 1px solid rgba(39, 201, 63, 0.3);
+  border-radius: 4px;
+}
+
+.entry-id {
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+.entry-line {
+  display: flex;
+  gap: 0;
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  flex-wrap: nowrap;
+}
+
+.line-label {
+  color: #00fff7;
+  font-weight: 700;
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
+  display: inline-block;
+}
+
+.line-value {
+  color: #fff;
+  flex: 1;
+  padding-left: 1rem;
+  
+  &.company {
+    color: #ff00ea;
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-shadow: 0 0 10px rgba(255, 0, 234, 0.6);
+  }
+  
+  &.location {
+    color: #5890ff;
+    text-shadow: 0 0 8px rgba(88, 144, 255, 0.4);
+  }
+}
+
+.entry-divider {
+  margin-top: 1.5rem;
+  color: rgba(0, 255, 247, 0.3);
+  font-size: 0.9rem;
+  letter-spacing: -0.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .terminal-career-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+  
+  .terminal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .header-left {
+    .header-title {
+      font-size: 1rem;
+    }
+  }
+  
+  .header-right {
+    font-size: 0.9rem;
+  }
+  
+  .terminal-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .terminal-prompt {
+    font-size: 0.95rem;
+  }
+  
+  .entry-line {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .line-label {
+    min-width: auto;
+  }
+  
+  .entry-header {
+    gap: 1rem;
+  }
+  
+  .entry-id {
+    margin-left: 0;
+  }
+  
+  .entry-divider {
+    font-size: 0.8rem;
+  }
 }

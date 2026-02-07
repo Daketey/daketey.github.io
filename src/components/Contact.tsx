@@ -77,7 +77,7 @@ const customTheme = (outerTheme: Theme, disableDark) =>
 
 
 
-function Contact(props) {
+function Contact() {
 
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -121,74 +121,117 @@ function Contact(props) {
   };
   const outerTheme = useTheme();
   return (
-    <ThemeProvider theme={customTheme(outerTheme, props.mode == 'dark')}>
+    <ThemeProvider theme={customTheme(outerTheme, true)}>
       <div id="contact">
         <div className="items-container">
-          <div className="contact_wrapper">
-            <h1>Contact Me</h1>
-            <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-            <Box
-              ref={form}
-              component="form"
-              noValidate
-              autoComplete="off"
-              className='contact-form'
-            >
-              <div className='form-flex'>
-                <TextField
-                  required
-                  InputLabelProps={{
-                    style: { color: props.mode == 'dark'? '#fff' : 'black' },
-                  }}
-                  sx={{ input: { color: props.mode == 'dark'? '#fff' : 'black' } }}
-                  id="outlined-required"
-                  label="Your Name"
-                  placeholder="What's your name?"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  error={nameError}
-                  helperText={nameError ? "Please enter your name" : ""}
-                />
-                <TextField
-                  required
-                  InputLabelProps={{
-                    style: { color: props.mode == 'dark'? '#fff' : 'black' },
-                  }}
-                  sx={{ input: { color: props.mode == 'dark'? '#fff' : 'black' } }}
-                  id="outlined-required"
-                  label="Email / Phone"
-                  placeholder="How can I reach you?"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  error={emailError}
-                  helperText={emailError ? "Please enter your email or phone number" : ""}
-                />
+          <div className="terminal-contact">
+            <div className="contact-wrapper">
+            <div className="contact-header">
+              <div className="header-left">
+                <span className="header-icon">✉</span>
+                <span className="header-title">mail -s "contact" portfolio@daketey.dev</span>
               </div>
-              <TextField
-                required
-                InputLabelProps={{
-                  style: { color: props.mode == 'dark'? '#fff' : 'black' },
-                }}
-                sx={{ input: { color: props.mode == 'dark'? '#fff' : 'black' } }}
-                id="outlined-multiline-static"
-                label="Message"
-                placeholder="Send me any inquiries or questions"
-                multiline
-                rows={10}
-                className="body-form"
-                value={message}
-                onChange={(e) => {
-                  setMessage(e.target.value);
-                }}
-                error={messageError}
-                helperText={messageError ? "Please enter the message" : ""}
-              />
-              <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-                Send
-              </Button>
-            </Box>
+              <div className="header-right glitch" data-text="[MESSAGE COMPOSER]">[MESSAGE COMPOSER]</div>
+            </div>
+            
+            <div className="contact-body">
+              <div className="contact-prompt">
+                <span className="prompt-text">user@local:~$</span>
+                <span className="prompt-command">mail -compose</span>
+              </div>
+              
+              <p className="contact-description">
+                <span className="comment-prefix">//</span> Got a project waiting to be realized? Let's collaborate and make it happen!
+              </p>
+              <Box
+                ref={form}
+                component="form"
+                noValidate
+                autoComplete="off"
+                className='contact-form'
+              >
+                <div className='form-flex'>
+                  <div className="form-field">
+                    <div className="field-label">
+                      <span className="field-prefix">FROM:</span>
+                    </div>
+                    <TextField
+                      required
+                      InputLabelProps={{
+                        style: { color: '#00fff7' },
+                      }}
+                      sx={{ input: { color: '#fff', fontFamily: 'Courier Prime, monospace' } }}
+                      id="outlined-required"
+                      placeholder="your_name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      error={nameError}
+                      helperText={nameError ? ">> ERROR: Name field required" : ""}
+                    />
+                  </div>
+                  <div className="form-field">
+                    <div className="field-label">
+                      <span className="field-prefix">REPLY-TO:</span>
+                    </div>
+                    <TextField
+                      required
+                      InputLabelProps={{
+                        style: { color: '#00fff7' },
+                      }}
+                      sx={{ input: { color: '#fff', fontFamily: 'Courier Prime, monospace' } }}
+                      id="outlined-required"
+                      placeholder="your.email@domain.com"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                      error={emailError}
+                      helperText={emailError ? ">> ERROR: Email field required" : ""}
+                    />
+                  </div>
+                </div>
+                <div className="form-field message-field">
+                  <div className="field-label">
+                    <span className="field-prefix">MESSAGE:</span>
+                  </div>
+                  <TextField
+                    required
+                    InputLabelProps={{
+                      style: { color: '#00fff7' },
+                    }}
+                    sx={{ 
+                      '& .MuiInputBase-input': { 
+                        color: '#fff', 
+                        fontFamily: 'Courier Prime, monospace',
+                        lineHeight: '1.8'
+                      } 
+                    }}
+                    id="outlined-multiline-static"
+                    placeholder="Type your message here..."
+                    multiline
+                    rows={10}
+                    className="body-form"
+                    value={message}
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                    }}
+                    error={messageError}
+                    helperText={messageError ? ">> ERROR: Message field required" : ""}
+                  />
+                </div>
+                <div className="send-wrapper">
+                  <Button 
+                    variant="contained" 
+                    endIcon={<SendIcon />} 
+                    onClick={sendEmail}
+                    className="send-button"
+                  >
+                    TRANSMIT
+                  </Button>
+                </div>
+              </Box>
+            </div>
+            </div>
           </div>
         </div>
       </div>

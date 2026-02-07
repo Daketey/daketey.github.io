@@ -7,7 +7,7 @@
    viewBox="0 0 136.17722 62.405022"
    version="1.1"
    id="svg1"
-   inkscape:export-filename="bg-dark.png"
+   inkscape:export-filename="..\..\..\..\..\Users\ritul\OneDrive\Desktop\cc.png"
    inkscape:export-xdpi="366.31668"
    inkscape:export-ydpi="366.31668"
    sodipodi:docname="rect1.svg"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="226.27417"
-     inkscape:cy="340.11836"
+     inkscape:zoom="11.313708"
+     inkscape:cx="117.99844"
+     inkscape:cy="96.387493"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -37,6 +37,18 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect34"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
        inkscape:vp_x="-55.294452 : -33.907472 : 1"
@@ -60,55 +72,45 @@
        inkscape:export-filename=".\rect1.png"
        inkscape:export-xdpi="366.31668"
        inkscape:export-ydpi="366.31668" />
-    <g
-       sodipodi:type="inkscape:box3d"
-       id="g47"
-       style="fill:#7e7e7e;fill-opacity:0.855696;stroke:#7002b0;stroke-width:10.8283;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       inkscape:perspectiveID="#perspective47"
-       inkscape:corner0="1.308378 : 0.14126472 : 0 : 1"
-       inkscape:corner7="-0.41366707 : 0.085695308 : 0.25 : 1">
-      <path
-         sodipodi:type="inkscape:box3dside"
-         id="path52"
-         style="fill:#e9e9ff;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-         inkscape:box3dsidetype="11"
-         d="M 64.214544,111.96251 218.30709,48.269751 V 105.57182 L 64.214544,130.69453 Z"
-         points="218.30709,48.269751 218.30709,105.57182 64.214544,130.69453 64.214544,111.96251 " />
-      <path
-         sodipodi:type="inkscape:box3dside"
-         id="path47"
-         style="fill:#353564;fill-rule:evenodd;stroke:none;stroke-width:9.2951;stroke-linejoin:round"
-         inkscape:box3dsidetype="6"
-         d="m 44.672169,108.61241 v 20.76072 l 19.542375,1.3214 v -18.73202 z"
-         points="44.672169,129.37313 64.214544,130.69453 64.214544,111.96251 44.672169,108.61241 " />
-      <path
-         sodipodi:type="inkscape:box3dside"
-         id="path48"
-         style="fill:#4d4d9f;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-         inkscape:box3dsidetype="5"
-         d="M 44.672169,108.61241 207.07106,7.9232415 218.30709,48.269751 64.214544,111.96251 Z"
-         points="207.07106,7.9232415 218.30709,48.269751 64.214544,111.96251 44.672169,108.61241 " />
-      <path
-         sodipodi:type="inkscape:box3dside"
-         id="path51"
-         style="fill:#afafde;fill-rule:evenodd;stroke:none;stroke-linejoin:round"
-         inkscape:box3dsidetype="13"
-         d="M 44.672169,129.37313 207.07106,89.657706 218.30709,105.57182 64.214544,130.69453 Z"
-         points="207.07106,89.657706 218.30709,105.57182 64.214544,130.69453 44.672169,129.37313 " />
-      <path
-         sodipodi:type="inkscape:box3dside"
-         id="path50"
-         style="fill:#d7d7ff;fill-rule:evenodd;stroke:none;stroke-width:11.9388;stroke-linejoin:round"
-         inkscape:box3dsidetype="14"
-         d="M 207.07106,7.9232415 V 89.657706 l 11.23603,15.914114 V 48.269751 Z"
-         points="207.07106,89.657706 218.30709,105.57182 218.30709,48.269751 207.07106,7.9232415 " />
-      <path
-         sodipodi:type="inkscape:box3dside"
-         id="path49"
-         style="fill:#8686bf;fill-rule:evenodd;stroke:none;stroke-width:11.6538;stroke-linejoin:round"
-         inkscape:box3dsidetype="3"
-         d="M 44.672169,108.61241 207.07106,7.9232415 V 89.657706 L 44.672169,129.37313 Z"
-         points="207.07106,7.9232415 207.07106,89.657706 44.672169,129.37313 44.672169,108.61241 " />
-    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;font-family:STCaiyun;-inkscape-font-specification:STCaiyun;letter-spacing:0px;fill:#5cde5a;fill-opacity:0.85569602;stroke:#296635;stroke-width:11.939;stroke-linejoin:bevel;stroke-opacity:0;paint-order:markers stroke fill"
+       x="80.967209"
+       y="76.049675"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:STCaiyun;-inkscape-font-specification:STCaiyun;stroke-width:11.939;fill:#5cde5a;fill-opacity:0.85569602"
+         x="80.967209"
+         y="76.049675" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'Tw Cen MT Condensed Extra Bold';-inkscape-font-specification:'Tw Cen MT Condensed Extra Bold, ';letter-spacing:0px;fill:#3e3e3e;fill-opacity:1;stroke:#296635;stroke-width:11.939;stroke-linejoin:bevel;stroke-opacity:0;paint-order:markers stroke fill"
+       x="77.624466"
+       y="79.564674"
+       id="text34"><tspan
+         sodipodi:role="line"
+         id="tspan34"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'OCR A Extended';-inkscape-font-specification:'OCR A Extended';stroke-width:11.939"
+         x="77.624466"
+         y="79.564674">CodingCanvas;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:Sylfaen;-inkscape-font-specification:Sylfaen;letter-spacing:0px;fill:#3db83d;fill-opacity:1;stroke:#296635;stroke-width:11.939;stroke-linejoin:bevel;stroke-opacity:0;paint-order:markers stroke fill"
+       x="76.289993"
+       y="68.285492"
+       id="text37"><tspan
+         sodipodi:role="line"
+         id="tspan37"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sylfaen;-inkscape-font-specification:Sylfaen;stroke-width:11.939"
+         x="76.289993"
+         y="68.285492" /></text>
+    <rect
+       style="fill:#47bf3e;fill-opacity:1;stroke:#296635;stroke-width:11.7778;stroke-linejoin:bevel;stroke-opacity:0;paint-order:markers stroke fill"
+       id="rect40"
+       width="5.3997531"
+       height="13.865514"
+       x="71.322701"
+       y="66.138535" />
   </g>
 </svg>
