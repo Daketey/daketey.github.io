@@ -5,9 +5,7 @@ import {
   Expertise,
   Project,
   Contact,
-  Navigation,
 } from "./components";
-import FadeIn from './components/FadeIn';
 import './index.scss';
 
 function App() {
