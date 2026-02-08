@@ -21,34 +21,36 @@ function Main() {
   return (
     <div className="container">
       <div className="about-section">
-        <div className="ascii-art-wrapper">
-          <pre className="ascii-art">{asciiArt}</pre>
-        </div>
-        <div className="content">
-          <div className="social_icons">
-            {social.map((item) => {
-              const IconComponent = iconComponents[item.name];
-              return (
-                <a key={item.name} href={item.url} target="_blank" rel="noreferrer">
-                  <span className="icon-label">{item.label}</span>
-                  <IconComponent/>
-                </a>
-              );
-            })}
+        <div className="about-section-inner">
+          <div className="ascii-art-wrapper">
+            <pre className="ascii-art">{asciiArt}</pre>
           </div>
-          <h1 data-text={personal.name}>{personal.name}</h1>
-          <p>{personal.title}</p>
+          <div className="content">
+            <div className="social_icons">
+              {social.map((item) => {
+                const IconComponent = iconComponents[item.name];
+                return (
+                  <a key={item.name} href={item.url} target="_blank" rel="noreferrer">
+                    <span className="icon-label">{item.label}</span>
+                    <IconComponent/>
+                  </a>
+                );
+              })}
+            </div>
+            <h1 data-text={personal.name}>{personal.name}</h1>
+            <p>{personal.title}</p>
 
-          <div className="mobile_social_icons">
-            {social.map((item) => {
-              const IconComponent = iconComponents[item.name];
-              return (
-                <a key={item.name} href={item.url} target="_blank" rel="noreferrer">
-                  <span className="icon-label">{item.label}</span>
-                  <IconComponent/>
-                </a>
-              );
-            })}
+            <div className="mobile_social_icons">
+              {social.map((item) => {
+                const IconComponent = iconComponents[item.name];
+                return (
+                  <a key={item.name} href={item.url} target="_blank" rel="noreferrer">
+                    <span className="icon-label">{item.label}</span>
+                    <IconComponent/>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className="scroll-indicator">
