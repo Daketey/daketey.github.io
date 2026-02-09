@@ -14,7 +14,7 @@ function Main() {
   const iconComponents: { [key: string]: any } = {
     github: GitHubIcon,
     linkedin: LinkedInIcon,
-    medium: ArticleIcon,
+    substack: ArticleIcon,
     email: EmailIcon
   };
 
